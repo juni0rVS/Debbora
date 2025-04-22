@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoTop - Loja de Carros</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Tela de carregamento -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <header id="topo">
+    <div class="container">
+      <h1>AutoTop</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#carros">Carros</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>Encontre seu carro dos sonhos</h2>
+      <p>As melhores ofertas em um só lugar</p>
+      <a href="#carros" class="btn">Ver Ofertas</a>
+    </div>
+  </section>
+
+  <section id="filtros" class="container filtros">
+    <h3>Filtrar Carros</h3>
+    <div class="filtros-inputs">
+      <label>Marca: <input type="text" id="filtroMarca" /></label>
+      <label>Ano: <input type="number" id="filtroAno" /></label>
+      <label>Preço máximo: <input type="number" id="filtroPreco" /></label>
+      <button onclick="filtrarCarros()">Filtrar</button>
+    </div>
+  </section>
+
+  <section id="carros" class="container">
+    <h2>Carros à Venda</h2>
+    <div id="listaCarros" class="carros-container"></div>
+  </section>
+
+  <section id="sobre" class="container">
+    <h2>Sobre a AutoTop</h2>
+    <p>A AutoTop é referência na venda de carros seminovos e novos em todo o Brasil. Nosso compromisso é entregar veículos de qualidade com preços justos e atendimento personalizado.</p>
+    <ul>
+      <li>Mais de 10 anos de experiência</li>
+      <li>Parcerias com as melhores montadoras</li>
+      <li>Garantia e procedência em todos os carros</li>
+    </ul>
+  </section>
+
+  <section id="contato" class="container">
+    <h2>Fale Conosco</h2>
+    <form id="formContato">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" required />
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" rows="4" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 AutoTop. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Tela de carregamento */
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s;
+  }
+  
+  #preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .loader {
+    border: 6px solid #ccc;
+    border-top: 6px solid #0d47a1;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  header {
+    background: #0d47a1;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background 0.3s ease;
+  }
+  
+  header.scrolled {
+    background: #002171;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .hero {
+    background: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 6rem 1rem;
+    margin-top: 4rem;
+  }
+  
+  .btn {
+    background: #ff9800;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    display: inline-block;
+  }
+  
+  .filtros {
+    margin: 2rem 0;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .filtros-inputs label {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .carros-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .carro {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .carro img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  
+  #sobre ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  form label, form input, form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  form input, form textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form button {
+    background: #0d47a1;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  footer {
+    background: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+  

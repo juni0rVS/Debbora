@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Livro Antigo Romântico</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fef6f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+    }
+
+    .scene {
+      perspective: 2000px;
+    }
+
+    .book {
+      width: 400px;
+      height: 300px;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+
+    .cover, .page {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transform-origin: left center;
+      transition: transform 1s ease-in-out;
+      border-radius: 5px;
+    }
+
+    .cover {
+      background: #4b2e2e;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      z-index: 3;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .page {
+      background: #fffaf0;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+
+    .page img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .page p {
+      color: #5c4033;
+      font-size: 16px;
+    }
+
+    .back-cover {
+      background: #2c1b1b;
+      z-index: 1;
+    }
+
+    .book.open .cover {
+      transform: rotateY(-160deg);
+    }
+
+    /* Flores animadas */
+    .flower {
+      position: absolute;
+      bottom: 0;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://i.imgur.com/NzY7LkN.png');
+      background-size: cover;
+      animation: floatUp 6s linear forwards;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="book" id="book">
+      <div class="cover">Abrir Livro</div>
+      <div class="page">
+        <img src="https://i.imgur.com/znwEMlF.jpg" alt="Labirinto Romântico">
+        <p>
+          Em um labirinto feito de sentimentos, cada passo é um suspiro e cada saída é um recomeço.  
+          O amor se esconde entre as folhas como segredos entrelaçados no tempo.
+        </p>
+      </div>
+      <div class="cover back-cover"></div>
+    </div>
+  </div>
+
+  <script>
+    const book = document.getElementById('book');
+
+    book.addEventListener('click', () => {
+      book.classList.toggle('open');
+
+      if (book.classList.contains('open')) {
+        for (let i = 0; i < 20; i++) {
+          const flower = document.createElement('div');
+          flower.classList.add('flower');
+          flower.style.left = Math.random() * window.innerWidth + 'px';
+          flower.style.animationDuration = (Math.random() * 2 + 4) + 's';
+          document.body.appendChild(flower);
+
+          setTimeout(() => {
+            flower.remove();
+          }, 7000);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
